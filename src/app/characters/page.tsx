@@ -17,8 +17,8 @@ export default function Home() {
         {GROUPS.map((group) =>
           group.characters.map((character) => (
             <li key={character.name} className="flex justify-between gap-x-6 py-2">
-              <div className="flex min-w-0 gap-x-4">
-                <Image className="h-12 w-12 flex-none rounded-md bg-gray-50" src={`/portraits/${character.name}.png`} alt="" width={48} height={48} />
+              <div className="flex min-w-0 gap-x-4 justify-center items-center">
+                <Image width={43} height={38} src={`/portraits/${character.name}.png`} alt="" />
                 <div className="min-w-0 flex-auto">
                   <p className="text-sm font-semibold leading-6 text-gray-900">{character.displayName}</p>
                   <p className="mt-1 truncate text-xs leading-5 text-gray-500">
