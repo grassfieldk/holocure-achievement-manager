@@ -28,7 +28,9 @@ export default function Home() {
               </div>
               <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                 <p className="text-sm leading-6 text-gray-900">Lv. {[savedata.characters.find((c: string[]) => c[0] === character.name)[1]]}</p>
-                <p className="text-primary">{savedata.achievements[`${character.name}Clear`].unlocked ? 'CLEARED!!' : 'NOT CLREAR..'}</p>
+                <p className={savedata.achievements[`${character.name}Clear`].unlocked ? 'text-primary' : 'text-gray-400'}>
+                  {savedata.achievements[`${character.name}Clear`].unlocked ? 'CLEARED!!' : 'NOT CLREAR..'}
+                </p>
               </div>
             </li>
           ))
