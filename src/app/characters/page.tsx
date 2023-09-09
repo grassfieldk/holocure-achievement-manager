@@ -2,7 +2,7 @@ import fs from 'fs';
 import Image from 'next/image';
 import { GROUPS } from '../../data/characters';
 
-export default function Home() {
+export default function Characters() {
   if (!process.env.SAVEDATA) {
     console.error('セーブデータの読み込みに失敗しました');
     return <div>セーブデータの読み込みに失敗しました</div>;
