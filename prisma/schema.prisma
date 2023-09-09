@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE")
+}
+
+model Idol {
+  id      String  @id
+  name    String
+  Group   Group?  @relation(fields: [groupId], references: [id])
+  groupId String?
+  order   Int
+}
+
+model Group {
+  id    String @id
+  name  String
+  area  String
+  idols Idol[]
+  order Int
+}
+
+model Achievement {
+  id          String @id
+  name        String
+  requirement String
+  order       Int
+}
